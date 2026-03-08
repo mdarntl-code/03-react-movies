@@ -20,14 +20,14 @@ function App() {
       setIsLoading(true);
       setMovies([]);
 
-      const data = await fetchMovies({ query });
-
-      if (data.results.length === 0) {
+      const results = await fetchMovies({ query });
+  
+      if (results.length === 0) {
         toast.error("No movies found for your request.");
         return;
       }
-
-      setMovies(data.results);
+  
+      setMovies(results);
     } catch {
       setIsError(true);
       toast.error("Something went wrong. Please try again later.");
