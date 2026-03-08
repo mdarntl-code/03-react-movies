@@ -28,7 +28,7 @@ function App() {
       }
 
       setMovies(data.results);
-    } catch (_error) {
+    } catch {
       setIsError(true);
       toast.error("Something went wrong. Please try again later.");
     } finally {
